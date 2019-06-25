@@ -26,11 +26,47 @@
 
 // All addresses are for 16bit registers; 
 // duplicates are for high or low bytes that aren't used together
-#define VCNL4040_ALS_CONFIG         0x00 ///< Ambient light sensor configuration
-#define VCNL4040_PS_CONF1_L         0x03 ///< Proximity sensor configuration 1/2
-#define VCNL4040_PS_DATA         0x08 ///< Proximity sensor data
-#define VCNL4040_ALS_DATA         0x09 ///< Ambient light sensor data
+#define VCNL4040_ALS_CONFIG         0x00 ///< Ambient light sensor configuration register
+#define VCNL4040_PS_CONF1_L         0x03 ///< Proximity sensor configuration 1/2 register
+#define VCNL4040_PS_MS_H         0x04 ///< Proximity sensor configuration 1/2 register
+#define VCNL4040_PS_DATA         0x08 ///< Proximity sensor data register
+#define VCNL4040_ALS_DATA         0x09 ///< Ambient light sensor data register
+#define VCNL4040_WHITE_DATA         0x0A ///< White light sensor data register
+                                    
+
 #define VCNL4040_DEVICE_ID       0x0C ///< Device ID
+
+/*
+~
+        H PS_MS R / W 0x00 White channel enable / disable, PS mode selection, PS protection setting, and LED current selection
+
+0x05    L PS_CANC_L R / W 0x00 PS cancellation level setting
+        H PS_CANC_M R / W 0x00 PS cancellation level setting
+
+0x06    L PS_THDL_L R / W 0x00 PS low interrupt threshold setting LSB byte
+        H PS_THDL_M R / W 0x00 PS low interrupt threshold setting MSB byte
+
+0x07    L PS_THDH_L R / W 0x00 PS high interrupt threshold setting LSB byte
+        H PS_THDH_M R / W 0x00 PS high interrupt threshold setting MSB byte
+
+0x08    L PS_Data_L R 0x00 PS LSB output data
+        H PS_Data_M R 0x00 PS MSB output data
+
+0x09    L ALS_Data_L R 0x00 ALS LSB output data
+        H ALS_Data_M R 0x00 ALS MSB output data
+
+0x0A    L White_Data_L R 0x00 White LSB output data
+        H White_Data_M R 0x00 White MSB output data
+0x0B
+        H INT_Flag R 0x00 ALS, PS interrupt flags
+
+0x0C    L ID_L R 0x86 Device ID LSB
+        H ID_M R 0x01 Device ID MSB
+
+ */
+
+
+
 
 /**
  * @brief Data rate options.
@@ -58,11 +94,13 @@ public:
   boolean begin(uint8_t i2c_addr=VCNL4040_I2CADDR_DEFAULT, TwoWire *wire = &Wire);
   uint16_t readProximity(void);
   uint16_t readAmbientLight(void);
+  uint16_t readWhite(void);
 
 
   Adafruit_BusIO_Register 
     *PS_CONFIG_12,  ///< BusIO Register for PS_CONFIG1 and PS_CONFIG2
-    *ALS_CONFIG;  ///< BusIO Register for ALS_CONFIG
+    *ALS_CONFIG,   ///< BusIO Register for ALS_CONFIG
+    *PS_MS;  ///< BusIO Register for PS_MS
 
 private:
   bool _init(void);

@@ -72,16 +72,19 @@ boolean Adafruit_VCNL4040::_init(void) {
 
   PS_CONFIG_12 = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_CONF1_L, 2);
   ALS_CONFIG = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_CONFIG, 2);
+  PS_MS = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_MS_H, 2);
 
   Adafruit_BusIO_RegisterBits ps_disable = Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 1, 0);
   Adafruit_BusIO_RegisterBits ps_hd = Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 1, 11);
   
   Adafruit_BusIO_RegisterBits als_disable = Adafruit_BusIO_RegisterBits(ALS_CONFIG, 1, 0);
+  Adafruit_BusIO_RegisterBits white_disable = Adafruit_BusIO_RegisterBits(PS_MS, 1, 15);
 
   ps_disable.write(false);
   ps_hd.write(true);
 
   als_disable.write(false);
+  white_disable.write(false);
   // turn on ints
   Serial.println("Got good device ID, returning true from _init()");
 
@@ -111,4 +114,15 @@ uint16_t Adafruit_VCNL4040::readAmbientLight(void) {
   Adafruit_BusIO_Register ambient_light =
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_DATA, 2);
   return (int16_t)ambient_light.read();
+}
+/**************************************************************************/
+/*!
+    @brief Reads the white sensor register.
+    @return The current white light measurement in units
+*/
+/**************************************************************************/
+uint16_t Adafruit_VCNL4040::readWhite(void) {
+  Adafruit_BusIO_Register white_light =
+    Adafruit_BusIO_Register(i2c_dev, VCNL4040_WHITE_DATA, 2);
+  return (int16_t)white_light.read();
 }
