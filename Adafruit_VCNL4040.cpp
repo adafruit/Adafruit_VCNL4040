@@ -70,6 +70,7 @@ boolean Adafruit_VCNL4040::_init(void) {
     return false;
   }
 
+
   PS_CONFIG_12 = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_CONF1_L, 2);
   ALS_CONFIG = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_CONFIG, 2);
   PS_MS = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_MS_H, 2);
@@ -101,6 +102,7 @@ boolean Adafruit_VCNL4040::_init(void) {
 uint16_t Adafruit_VCNL4040::readProximity(void) {
   Adafruit_BusIO_Register proximity =
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_DATA, 2);
+  delay(10);
   return (int16_t)proximity.read();
 }
 
@@ -113,6 +115,7 @@ uint16_t Adafruit_VCNL4040::readProximity(void) {
 uint16_t Adafruit_VCNL4040::readAmbientLight(void) {
   Adafruit_BusIO_Register ambient_light =
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_DATA, 2);
+  delay(10);
   return (int16_t)ambient_light.read();
 }
 /**************************************************************************/
@@ -124,5 +127,6 @@ uint16_t Adafruit_VCNL4040::readAmbientLight(void) {
 uint16_t Adafruit_VCNL4040::readWhite(void) {
   Adafruit_BusIO_Register white_light =
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_WHITE_DATA, 2);
+  delay(10);
   return (int16_t)white_light.read();
 }
