@@ -27,13 +27,16 @@
 // All addresses are for 16bit registers; 
 // duplicates are for high or low bytes that aren't used together
 #define VCNL4040_ALS_CONFIG         0x00 ///< Ambient light sensor configuration register
+#define VCNL4040_ALS_THDH           0x01 ///< Ambient light high threshold register
+#define VCNL4040_ALS_THDL           0x02 ///< Ambient light low threshold register
 #define VCNL4040_PS_CONF1_L         0x03 ///< Proximity sensor configuration 1/2 register
 #define VCNL4040_PS_MS_H         0x04 ///< Proximity sensor configuration 1/2 register
+#define VCNL4040_PS_THDL          0x06 /// < Proximity sensor low threshold register
+#define VCNL4040_PS_THDH          0x07 /// < Proximity sensor high threshold register
 #define VCNL4040_PS_DATA         0x08 ///< Proximity sensor data register
 #define VCNL4040_ALS_DATA         0x09 ///< Ambient light sensor data register
 #define VCNL4040_WHITE_DATA         0x0A ///< White light sensor data register
-                                    
-
+#define VCNL4040_INT_FLAG         0x0B ///< Interrupt status register
 #define VCNL4040_DEVICE_ID       0x0C ///< Device ID
 
 /*
@@ -64,8 +67,15 @@
         H ID_M R 0x01 Device ID MSB
 
  */
-
-
+typedef enum proximity_type {
+  VCNL4040_PROXIMITY_INT_DISABLE,
+  VCNL4040_PROXIMITY_INT_CLOSE,
+  VCNL4040_PROXIMITY_INT_AWAY,
+  VCNL4040_PROXIMITY_INT_CLOSE_AWAY,
+} VCNL4040_Interrupt;
+/*
+ (0 : 0) = interrupt disable, (0 : 1) = trigger when close, (1 : 0)= trigger when away,
+(1 : 1)= trigger when close or away */
 
 
 /**
@@ -95,6 +105,16 @@ public:
   uint16_t readProximity(void);
   uint16_t readAmbientLight(void);
   uint16_t readWhite(void);
+  void enableAmbientLightInterrupts(void);
+  void disableAmbientLightInterrupts(void);
+  uint16_t readAmbientLightHighThreshold(void);
+  void setAmbientLightHighThreshold(uint16_t high_threshold);
+  uint16_t readAmbientLightLowThreshold(void);
+  void setAmbientLightLowThreshold(uint16_t low_threshold);
+  uint8_t readInterruptStatus(void);
+  void enableProximityInterrupts(VCNL4040_Interrupt interrupt_type);
+  void disableProximityInterrupts(void);
+  void setProximityLowThreshold(uint16_t);
 
 
   Adafruit_BusIO_Register 
@@ -109,3 +129,4 @@ private:
 };
 
 #endif
+

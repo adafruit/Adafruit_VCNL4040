@@ -70,15 +70,15 @@ boolean Adafruit_VCNL4040::_init(void) {
     return false;
   }
 
-
-  PS_CONFIG_12 = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_CONF1_L, 2);
   ALS_CONFIG = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_CONFIG, 2);
+  PS_CONFIG_12 = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_CONF1_L, 2);
   PS_MS = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_MS_H, 2);
 
   Adafruit_BusIO_RegisterBits ps_disable = Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 1, 0);
   Adafruit_BusIO_RegisterBits ps_hd = Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 1, 11);
   
   Adafruit_BusIO_RegisterBits als_disable = Adafruit_BusIO_RegisterBits(ALS_CONFIG, 1, 0);
+  
   Adafruit_BusIO_RegisterBits white_disable = Adafruit_BusIO_RegisterBits(PS_MS, 1, 15);
 
   ps_disable.write(false);
@@ -102,7 +102,6 @@ boolean Adafruit_VCNL4040::_init(void) {
 uint16_t Adafruit_VCNL4040::readProximity(void) {
   Adafruit_BusIO_Register proximity =
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_DATA, 2);
-  delay(10);
   return (int16_t)proximity.read();
 }
 
@@ -115,7 +114,6 @@ uint16_t Adafruit_VCNL4040::readProximity(void) {
 uint16_t Adafruit_VCNL4040::readAmbientLight(void) {
   Adafruit_BusIO_Register ambient_light =
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_DATA, 2);
-  delay(10);
   return (int16_t)ambient_light.read();
 }
 /**************************************************************************/
@@ -129,4 +127,74 @@ uint16_t Adafruit_VCNL4040::readWhite(void) {
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_WHITE_DATA, 2);
   delay(10);
   return (int16_t)white_light.read();
+}
+
+void Adafruit_VCNL4040::enableAmbientLightInterrupts(){
+  Adafruit_BusIO_RegisterBits als_interrupt_enable = 
+    Adafruit_BusIO_RegisterBits(ALS_CONFIG, 1, 1 );
+  delay(20);
+  als_interrupt_enable.write(1);
+}
+
+void Adafruit_VCNL4040::disableAmbientLightInterrupts(){
+  Adafruit_BusIO_RegisterBits als_interrupt_enable = 
+    Adafruit_BusIO_RegisterBits(ALS_CONFIG, 1, 1 );
+  delay(20);
+  als_interrupt_enable.write(0);
+}
+
+uint16_t Adafruit_VCNL4040::readAmbientLightHighThreshold(void){
+  Adafruit_BusIO_Register als_high_threshold = 
+    Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_THDH, 2);
+  delay(20);
+  return (uint16_t)als_high_threshold.read();
+}
+void Adafruit_VCNL4040::setAmbientLightHighThreshold(uint16_t high_threshold){
+  Adafruit_BusIO_Register als_high_threshold = 
+    Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_THDH, 2);
+  delay(20);
+  als_high_threshold.write(high_threshold);
+}
+
+uint16_t Adafruit_VCNL4040::readAmbientLightLowThreshold(void){
+  Adafruit_BusIO_Register als_low_threshold = 
+    Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_THDL, 2);
+  delay(20);
+  return (uint16_t)als_low_threshold.read();
+}
+void Adafruit_VCNL4040::setAmbientLightLowThreshold(uint16_t low_threshold){
+  Adafruit_BusIO_Register als_low_threshold = 
+    Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_THDL, 2);
+  delay(20);
+  als_low_threshold.write(low_threshold);
+}
+
+uint8_t Adafruit_VCNL4040::readInterruptStatus(void) {
+  Adafruit_BusIO_Register interrupt_status_register = 
+    Adafruit_BusIO_Register(i2c_dev, VCNL4040_INT_FLAG, 2);
+
+  Adafruit_BusIO_RegisterBits interrupt_status = 
+    Adafruit_BusIO_RegisterBits(&interrupt_status_register, 8, 8);
+  return (uint16_t)interrupt_status.read();
+}
+
+void Adafruit_VCNL4040::enableProximityInterrupts(VCNL4040_Interrupt interrupt_type) {
+
+  Adafruit_BusIO_RegisterBits proximity_int_config = 
+    Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 2, 0);
+  proximity_int_config.write(interrupt_type);
+}
+
+void Adafruit_VCNL4040::disableProximityInterrupts(void) {
+
+  Adafruit_BusIO_RegisterBits proximity_int_config = 
+    Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 2, 0);
+  proximity_int_config.write(VCNL4040_PROXIMITY_INT_DISABLE);
+}
+
+void Adafruit_VCNL4040::setProximityLowThreshold(uint16_t low_threshold){
+  Adafruit_BusIO_Register proximity_low_threshold = 
+    Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_THDL, 2);
+  
+  proximity_low_threshold.write(low_threshold);
 }
