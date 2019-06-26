@@ -95,81 +95,112 @@ boolean Adafruit_VCNL4040::_init(void) {
 
 /**************************************************************************/
 /*!
-    @brief Reads the proximity sensor register.
+    @brief Gets the current proximity sensor value.
     @return The current proximity measurement in units
 */
 /**************************************************************************/
-uint16_t Adafruit_VCNL4040::readProximity(void) {
+uint16_t Adafruit_VCNL4040::getProximity(void) {
   Adafruit_BusIO_Register proximity =
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_DATA, 2);
+  delay(10);
   return (int16_t)proximity.read();
 }
 
 /**************************************************************************/
 /*!
-    @brief Reads the ambient light sensor register.
+    @brief Gets the current ambient light sensor value.
     @return The current ambient light measurement in units
 */
 /**************************************************************************/
-uint16_t Adafruit_VCNL4040::readAmbientLight(void) {
+uint16_t Adafruit_VCNL4040::getAmbientLight(void) {
   Adafruit_BusIO_Register ambient_light =
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_DATA, 2);
   return (int16_t)ambient_light.read();
 }
 /**************************************************************************/
 /*!
-    @brief Reads the white sensor register.
+    @brief Gets the current white light value.
     @return The current white light measurement in units
 */
 /**************************************************************************/
-uint16_t Adafruit_VCNL4040::readWhite(void) {
+uint16_t Adafruit_VCNL4040::getWhiteLight(void) {
   Adafruit_BusIO_Register white_light =
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_WHITE_DATA, 2);
   delay(10);
   return (int16_t)white_light.read();
 }
 
-void Adafruit_VCNL4040::enableAmbientLightInterrupts(){
+/**************************************************************************/
+/*!
+    @brief Enables or disables ambient light based interrupts.
+    @param  enable
+            Set to true to enable or false to disable ambient light interrupts
+*/
+/**************************************************************************/
+void Adafruit_VCNL4040::enableAmbientLightInterrupts(bool enable){
   Adafruit_BusIO_RegisterBits als_interrupt_enable = 
     Adafruit_BusIO_RegisterBits(ALS_CONFIG, 1, 1 );
-  delay(20);
-  als_interrupt_enable.write(1);
+  als_interrupt_enable.write(enable);
 }
 
-void Adafruit_VCNL4040::disableAmbientLightInterrupts(){
-  Adafruit_BusIO_RegisterBits als_interrupt_enable = 
-    Adafruit_BusIO_RegisterBits(ALS_CONFIG, 1, 1 );
-  delay(20);
-  als_interrupt_enable.write(0);
-}
-
-uint16_t Adafruit_VCNL4040::readAmbientLightHighThreshold(void){
+/**************************************************************************/
+/*!
+    @brief Gets the current ambient light high threshold.
+    @return The current ambient light high threshold
+*/
+/**************************************************************************/
+uint16_t Adafruit_VCNL4040::getAmbientLightHighThreshold(void){
   Adafruit_BusIO_Register als_high_threshold = 
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_THDH, 2);
-  delay(20);
   return (uint16_t)als_high_threshold.read();
 }
+/**************************************************************************/
+/*!
+    @brief Sets the ambient light high threshold.
+    @param  high_threshold
+            The high threshold to set
+*/
+/**************************************************************************/
 void Adafruit_VCNL4040::setAmbientLightHighThreshold(uint16_t high_threshold){
   Adafruit_BusIO_Register als_high_threshold = 
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_THDH, 2);
-  delay(20);
   als_high_threshold.write(high_threshold);
 }
-
-uint16_t Adafruit_VCNL4040::readAmbientLightLowThreshold(void){
+/**************************************************************************/
+/*!
+    @brief Sets the ambient light low threshold.
+    @return the current ambient light low threshold
+*/
+/**************************************************************************/
+uint16_t Adafruit_VCNL4040::getAmbientLightLowThreshold(void){
   Adafruit_BusIO_Register als_low_threshold = 
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_THDL, 2);
-  delay(20);
   return (uint16_t)als_low_threshold.read();
 }
+
+/**************************************************************************/
+/*!
+    @brief Sets the ambient light low threshold.
+    @param  low_threshold
+            The low threshold to set
+*/
+/**************************************************************************/
 void Adafruit_VCNL4040::setAmbientLightLowThreshold(uint16_t low_threshold){
   Adafruit_BusIO_Register als_low_threshold = 
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_THDL, 2);
-  delay(20);
   als_low_threshold.write(low_threshold);
 }
 
-uint8_t Adafruit_VCNL4040::readInterruptStatus(void) {
+/**************************************************************************/
+/*!
+    @brief Gets and clears the interrupt status register.
+    @return The current value of the interrupt status register.
+            Indivitual interrupt types can be checked by anding the returned byte with
+            the members of `VCNL4040_InterruptType`:`VCNL4040_PROXIMITY_AWAY`,
+            `VCNL4040_PROXIMITY_CLOSE`, `PROXIMITY_LOW`, or `PROXIMITY_HIGH`
+*/
+/**************************************************************************/
+uint8_t Adafruit_VCNL4040::getInterruptStatus(void) {
   Adafruit_BusIO_Register interrupt_status_register = 
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_INT_FLAG, 2);
 
@@ -177,24 +208,45 @@ uint8_t Adafruit_VCNL4040::readInterruptStatus(void) {
     Adafruit_BusIO_RegisterBits(&interrupt_status_register, 8, 8);
   return (uint16_t)interrupt_status.read();
 }
-
-void Adafruit_VCNL4040::enableProximityInterrupts(VCNL4040_Interrupt interrupt_type) {
-
+/**************************************************************************/
+/*!
+    @brief Disables or  enables proximity interrupts under a given condition.
+    @param  interrupt_condition
+            The condition under which to raise an interrupt. Must be a `VCNL4040_ProximityType`.
+            Use `VCNL4040_PROXIMITY_INT_DISABLE` to disable proximity interrupts.
+*/
+/**************************************************************************/
+void Adafruit_VCNL4040::enableProximityInterrupts(VCNL4040_ProximityType interrupt_condition) {
   Adafruit_BusIO_RegisterBits proximity_int_config = 
-    Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 2, 0);
-  proximity_int_config.write(interrupt_type);
+    Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 2, 8);
+
+  proximity_int_config.write(interrupt_condition);
 }
 
-void Adafruit_VCNL4040::disableProximityInterrupts(void) {
-
-  Adafruit_BusIO_RegisterBits proximity_int_config = 
-    Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 2, 0);
-  proximity_int_config.write(VCNL4040_PROXIMITY_INT_DISABLE);
-}
-
+/**************************************************************************/
+/*!
+    @brief Sets the proximity low threshold.
+    @param  low_threshold
+            The low threshold to set
+*/
+/**************************************************************************/
 void Adafruit_VCNL4040::setProximityLowThreshold(uint16_t low_threshold){
   Adafruit_BusIO_Register proximity_low_threshold = 
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_THDL, 2);
-  
+
   proximity_low_threshold.write(low_threshold);
+}
+
+/**************************************************************************/
+/*!
+    @brief Sets the proximity high threshold.
+    @param  high_threshold
+            The high threshold to set
+*/
+/**************************************************************************/
+void Adafruit_VCNL4040::setProximityHighThreshold(uint16_t high_threshold){
+  Adafruit_BusIO_Register proximity_high_threshold =
+    Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_THDH, 2);
+
+  proximity_high_threshold.write(high_threshold);
 }
