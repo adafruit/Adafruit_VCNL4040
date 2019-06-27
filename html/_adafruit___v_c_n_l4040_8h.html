@@ -60,7 +60,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">Adafruit_VCNL4040.h File Reference</div>  </div>
 </div><!--header-->
@@ -75,7 +77,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html">Adafruit_VCNL4040</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data rate options.  <a href="class_adafruit___v_c_n_l4040.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that stores state and functions for interacting with the VCNL4040 I2C Digital Potentiometer.  <a href="class_adafruit___v_c_n_l4040.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -88,6 +90,14 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a947236af6e67c632059a7ae7949b5c8c">VCNL4040_ALS_CONFIG</a>&#160;&#160;&#160;0x00</td></tr>
 <tr class="memdesc:a947236af6e67c632059a7ae7949b5c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ambient light sensor configuration register. <br /></td></tr>
 <tr class="separator:a947236af6e67c632059a7ae7949b5c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e031048fc45cf4f0489c1ad12a8b6fa"><td class="memItemLeft" align="right" valign="top"><a id="a6e031048fc45cf4f0489c1ad12a8b6fa"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a6e031048fc45cf4f0489c1ad12a8b6fa">VCNL4040_ALS_THDH</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memdesc:a6e031048fc45cf4f0489c1ad12a8b6fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ambient light high threshold register. <br /></td></tr>
+<tr class="separator:a6e031048fc45cf4f0489c1ad12a8b6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64bb4441f7e4cd12409bb399c473f1e8"><td class="memItemLeft" align="right" valign="top"><a id="a64bb4441f7e4cd12409bb399c473f1e8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a64bb4441f7e4cd12409bb399c473f1e8">VCNL4040_ALS_THDL</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memdesc:a64bb4441f7e4cd12409bb399c473f1e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ambient light low threshold register. <br /></td></tr>
+<tr class="separator:a64bb4441f7e4cd12409bb399c473f1e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78a0a38d7057a4f0b86c7bf6a2a480cf"><td class="memItemLeft" align="right" valign="top"><a id="a78a0a38d7057a4f0b86c7bf6a2a480cf"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a78a0a38d7057a4f0b86c7bf6a2a480cf">VCNL4040_PS_CONF1_L</a>&#160;&#160;&#160;0x03</td></tr>
 <tr class="memdesc:a78a0a38d7057a4f0b86c7bf6a2a480cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity sensor configuration 1/2 register. <br /></td></tr>
@@ -96,6 +106,14 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a702342f1a1e13dec5a5519271cd220aa">VCNL4040_PS_MS_H</a>&#160;&#160;&#160;0x04</td></tr>
 <tr class="memdesc:a702342f1a1e13dec5a5519271cd220aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity sensor configuration 1/2 register. <br /></td></tr>
 <tr class="separator:a702342f1a1e13dec5a5519271cd220aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab100d1d61c707d0c87a1c3be0b372689"><td class="memItemLeft" align="right" valign="top"><a id="ab100d1d61c707d0c87a1c3be0b372689"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#ab100d1d61c707d0c87a1c3be0b372689">VCNL4040_PS_THDL</a>&#160;&#160;&#160;0x06</td></tr>
+<tr class="memdesc:ab100d1d61c707d0c87a1c3be0b372689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity sensor low threshold register. <br /></td></tr>
+<tr class="separator:ab100d1d61c707d0c87a1c3be0b372689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6987201a87d3398aeb3bcf798bc97b8"><td class="memItemLeft" align="right" valign="top"><a id="af6987201a87d3398aeb3bcf798bc97b8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#af6987201a87d3398aeb3bcf798bc97b8">VCNL4040_PS_THDH</a>&#160;&#160;&#160;0x07</td></tr>
+<tr class="memdesc:af6987201a87d3398aeb3bcf798bc97b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity sensor high threshold register. <br /></td></tr>
+<tr class="separator:af6987201a87d3398aeb3bcf798bc97b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f9bfa187a9ee05e7540e4602376cee5"><td class="memItemLeft" align="right" valign="top"><a id="a5f9bfa187a9ee05e7540e4602376cee5"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a5f9bfa187a9ee05e7540e4602376cee5">VCNL4040_PS_DATA</a>&#160;&#160;&#160;0x08</td></tr>
 <tr class="memdesc:a5f9bfa187a9ee05e7540e4602376cee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity sensor data register. <br /></td></tr>
@@ -108,17 +126,307 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a500d4a9c1496d1e11fd974288d7d5418">VCNL4040_WHITE_DATA</a>&#160;&#160;&#160;0x0A</td></tr>
 <tr class="memdesc:a500d4a9c1496d1e11fd974288d7d5418"><td class="mdescLeft">&#160;</td><td class="mdescRight">White light sensor data register. <br /></td></tr>
 <tr class="separator:a500d4a9c1496d1e11fd974288d7d5418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f5df17378525465fe68fe62139d4e7b"><td class="memItemLeft" align="right" valign="top"><a id="a6f5df17378525465fe68fe62139d4e7b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a6f5df17378525465fe68fe62139d4e7b">VCNL4040_INT_FLAG</a>&#160;&#160;&#160;0x0B</td></tr>
+<tr class="memdesc:a6f5df17378525465fe68fe62139d4e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt status register. <br /></td></tr>
+<tr class="separator:a6f5df17378525465fe68fe62139d4e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52caeb7fbd419b8ee9bb4c14c8b15aa1"><td class="memItemLeft" align="right" valign="top"><a id="a52caeb7fbd419b8ee9bb4c14c8b15aa1"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a52caeb7fbd419b8ee9bb4c14c8b15aa1">VCNL4040_DEVICE_ID</a>&#160;&#160;&#160;0x0C</td></tr>
 <tr class="memdesc:a52caeb7fbd419b8ee9bb4c14c8b15aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device ID. <br /></td></tr>
 <tr class="separator:a52caeb7fbd419b8ee9bb4c14c8b15aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a76b05a9e94f79c1dcc7c921df75bbb5f"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a9c706a0217fb9e0eb51c6fbacfecc887">led_current</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a76b05a9e94f79c1dcc7c921df75bbb5f">VCNL4040_LEDCurrent</a></td></tr>
+<tr class="memdesc:a76b05a9e94f79c1dcc7c921df75bbb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity LED current values.  <a href="#a76b05a9e94f79c1dcc7c921df75bbb5f">More...</a><br /></td></tr>
+<tr class="separator:a76b05a9e94f79c1dcc7c921df75bbb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae90a57ec278038d64bfcedc779cdb16"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a4f8ac1c9bbb4a45112465ec44fa336c3">led_duty_cycle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#aae90a57ec278038d64bfcedc779cdb16">VCNL4040_LEDDutyCycle</a></td></tr>
+<tr class="memdesc:aae90a57ec278038d64bfcedc779cdb16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity LED duty cycle values.  <a href="#aae90a57ec278038d64bfcedc779cdb16">More...</a><br /></td></tr>
+<tr class="separator:aae90a57ec278038d64bfcedc779cdb16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a583ff48e46a5229e2d47a002b2a6a7d1"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a8a9566fd6d8413c5ca50f47f5f0f05dc">ambient_integration_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a583ff48e46a5229e2d47a002b2a6a7d1">VCNL4040_AmbientIntegration</a></td></tr>
+<tr class="memdesc:a583ff48e46a5229e2d47a002b2a6a7d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ambient light integration time values.  <a href="#a583ff48e46a5229e2d47a002b2a6a7d1">More...</a><br /></td></tr>
+<tr class="separator:a583ff48e46a5229e2d47a002b2a6a7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e46de4c400ffbfc43a1ed7dba588fdb"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a7b802f7396002261b044270c730d8f83">proximity_integration_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a1e46de4c400ffbfc43a1ed7dba588fdb">VCNL4040_ProximityIntegration</a></td></tr>
+<tr class="memdesc:a1e46de4c400ffbfc43a1ed7dba588fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity measurement integration time values.  <a href="#a1e46de4c400ffbfc43a1ed7dba588fdb">More...</a><br /></td></tr>
+<tr class="separator:a1e46de4c400ffbfc43a1ed7dba588fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0530116d850afe762fe5a4e0399ada6"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a7403dd14f82be09f55fdac6edddebdc2">proximity_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#ae0530116d850afe762fe5a4e0399ada6">VCNL4040_ProximityType</a></td></tr>
+<tr class="memdesc:ae0530116d850afe762fe5a4e0399ada6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity interrupt types.  <a href="#ae0530116d850afe762fe5a4e0399ada6">More...</a><br /></td></tr>
+<tr class="separator:ae0530116d850afe762fe5a4e0399ada6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa28cb8b3fa7e57adb26bd60eec5a1bfe"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#abc28ec92e4ecc64908ee3d33cb3f8215">interrupt_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#aa28cb8b3fa7e57adb26bd60eec5a1bfe">VCNL4040_InterruptType</a></td></tr>
+<tr class="memdesc:aa28cb8b3fa7e57adb26bd60eec5a1bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt types.  <a href="#aa28cb8b3fa7e57adb26bd60eec5a1bfe">More...</a><br /></td></tr>
+<tr class="separator:aa28cb8b3fa7e57adb26bd60eec5a1bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a9c706a0217fb9e0eb51c6fbacfecc887"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a9c706a0217fb9e0eb51c6fbacfecc887">led_current</a> { <br />
+&#160;&#160;<b>VCNL4040_LED_CURRENT_50MA</b>, 
+<b>VCNL4040_LED_CURRENT_75MA</b>, 
+<b>VCNL4040_LED_CURRENT_100MA</b>, 
+<b>VCNL4040_LED_CURRENT_120MA</b>, 
+<br />
+&#160;&#160;<b>VCNL4040_LED_CURRENT_140MA</b>, 
+<b>VCNL4040_LED_CURRENT_160MA</b>, 
+<b>VCNL4040_LED_CURRENT_180MA</b>, 
+<b>VCNL4040_LED_CURRENT_200MA</b>
+<br />
+ }<tr class="memdesc:a9c706a0217fb9e0eb51c6fbacfecc887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity LED current values.  <a href="_adafruit___v_c_n_l4040_8h.html#a9c706a0217fb9e0eb51c6fbacfecc887">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a9c706a0217fb9e0eb51c6fbacfecc887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f8ac1c9bbb4a45112465ec44fa336c3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a4f8ac1c9bbb4a45112465ec44fa336c3">led_duty_cycle</a> { <b>VCNL4040_LED_DUTY_1_40</b>, 
+<b>VCNL4040_LED_DUTY_1_80</b>, 
+<b>VCNL4040_LED_DUTY_1_160</b>, 
+<b>VCNL4040_LED_DUTY_1_320</b>
+ }<tr class="memdesc:a4f8ac1c9bbb4a45112465ec44fa336c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity LED duty cycle values.  <a href="_adafruit___v_c_n_l4040_8h.html#a4f8ac1c9bbb4a45112465ec44fa336c3">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a4f8ac1c9bbb4a45112465ec44fa336c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a9566fd6d8413c5ca50f47f5f0f05dc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a8a9566fd6d8413c5ca50f47f5f0f05dc">ambient_integration_time</a> { <b>VCNL4040_AMBIENT_INTEGRATION_TIME_80MS</b>, 
+<b>VCNL4040_AMBIENT_INTEGRATION_TIME_160MS</b>, 
+<b>VCNL4040_AMBIENT_INTEGRATION_TIME_320MS</b>, 
+<b>VCNL4040_AMBIENT_INTEGRATION_TIME_640MS</b>
+ }<tr class="memdesc:a8a9566fd6d8413c5ca50f47f5f0f05dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ambient light integration time values.  <a href="_adafruit___v_c_n_l4040_8h.html#a8a9566fd6d8413c5ca50f47f5f0f05dc">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a8a9566fd6d8413c5ca50f47f5f0f05dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b802f7396002261b044270c730d8f83"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a7b802f7396002261b044270c730d8f83">proximity_integration_time</a> { <br />
+&#160;&#160;<b>VCNL4040_PROXIMITY_INTEGRATION_TIME_1T</b>, 
+<b>VCNL4040_PROXIMITY_INTEGRATION_TIME_1_5T</b>, 
+<b>VCNL4040_PROXIMITY_INTEGRATION_TIME_2T</b>, 
+<b>VCNL4040_PROXIMITY_INTEGRATION_TIME_2_5T</b>, 
+<br />
+&#160;&#160;<b>VCNL4040_PROXIMITY_INTEGRATION_TIME_3T</b>, 
+<b>VCNL4040_PROXIMITY_INTEGRATION_TIME_3_5T</b>, 
+<b>VCNL4040_PROXIMITY_INTEGRATION_TIME_4T</b>, 
+<b>VCNL4040_PROXIMITY_INTEGRATION_TIME_8T</b>
+<br />
+ }<tr class="memdesc:a7b802f7396002261b044270c730d8f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity measurement integration time values.  <a href="_adafruit___v_c_n_l4040_8h.html#a7b802f7396002261b044270c730d8f83">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a7b802f7396002261b044270c730d8f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7403dd14f82be09f55fdac6edddebdc2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a7403dd14f82be09f55fdac6edddebdc2">proximity_type</a> { <b>VCNL4040_PROXIMITY_INT_DISABLE</b>, 
+<b>VCNL4040_PROXIMITY_INT_CLOSE</b>, 
+<b>VCNL4040_PROXIMITY_INT_AWAY</b>, 
+<b>VCNL4040_PROXIMITY_INT_CLOSE_AWAY</b>
+ }<tr class="memdesc:a7403dd14f82be09f55fdac6edddebdc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity interrupt types.  <a href="_adafruit___v_c_n_l4040_8h.html#a7403dd14f82be09f55fdac6edddebdc2">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a7403dd14f82be09f55fdac6edddebdc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc28ec92e4ecc64908ee3d33cb3f8215"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#abc28ec92e4ecc64908ee3d33cb3f8215">interrupt_type</a> { <b>VCNL4040_PROXIMITY_AWAY</b>, 
+<b>VCNL4040_PROXIMITY_CLOSE</b>, 
+<b>VCNL4040_AMBIENT_HIGH</b> =4, 
+<b>VCNL4040_AMBIENT_LOW</b>
+ }<tr class="memdesc:abc28ec92e4ecc64908ee3d33cb3f8215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt types.  <a href="_adafruit___v_c_n_l4040_8h.html#abc28ec92e4ecc64908ee3d33cb3f8215">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:abc28ec92e4ecc64908ee3d33cb3f8215"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>I2C Driver for VCNL4040 proximity and ambient light sensor library</p>
 <p>This is a library for the Adafruit VCNL4040 breakout: <a href="http://www.adafruit.com/products">http://www.adafruit.com/products</a></p>
 <p>Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!</p>
 <p>BSD license (see license.txt) </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a76b05a9e94f79c1dcc7c921df75bbb5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76b05a9e94f79c1dcc7c921df75bbb5f">&#9670;&nbsp;</a></span>VCNL4040_LEDCurrent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a9c706a0217fb9e0eb51c6fbacfecc887">led_current</a>  <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a76b05a9e94f79c1dcc7c921df75bbb5f">VCNL4040_LEDCurrent</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Proximity LED current values. </p>
+<p>Allowed values for <code>setProximityLEDCurrent</code>. </p>
+
+</div>
+</div>
+<a id="aae90a57ec278038d64bfcedc779cdb16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae90a57ec278038d64bfcedc779cdb16">&#9670;&nbsp;</a></span>VCNL4040_LEDDutyCycle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a4f8ac1c9bbb4a45112465ec44fa336c3">led_duty_cycle</a>  <a class="el" href="_adafruit___v_c_n_l4040_8h.html#aae90a57ec278038d64bfcedc779cdb16">VCNL4040_LEDDutyCycle</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Proximity LED duty cycle values. </p>
+<p>Allowed values for <code>setProximityLEDDutyCycle</code>. </p>
+
+</div>
+</div>
+<a id="a583ff48e46a5229e2d47a002b2a6a7d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a583ff48e46a5229e2d47a002b2a6a7d1">&#9670;&nbsp;</a></span>VCNL4040_AmbientIntegration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a8a9566fd6d8413c5ca50f47f5f0f05dc">ambient_integration_time</a>  <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a583ff48e46a5229e2d47a002b2a6a7d1">VCNL4040_AmbientIntegration</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ambient light integration time values. </p>
+<p>Allowed values for <code>setAmbientIntegrationTime</code>. </p>
+
+</div>
+</div>
+<a id="a1e46de4c400ffbfc43a1ed7dba588fdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e46de4c400ffbfc43a1ed7dba588fdb">&#9670;&nbsp;</a></span>VCNL4040_ProximityIntegration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a7b802f7396002261b044270c730d8f83">proximity_integration_time</a>  <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a1e46de4c400ffbfc43a1ed7dba588fdb">VCNL4040_ProximityIntegration</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Proximity measurement integration time values. </p>
+<p>Allowed values for <code>setProximityIntegrationTime</code>. </p>
+
+</div>
+</div>
+<a id="ae0530116d850afe762fe5a4e0399ada6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0530116d850afe762fe5a4e0399ada6">&#9670;&nbsp;</a></span>VCNL4040_ProximityType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a7403dd14f82be09f55fdac6edddebdc2">proximity_type</a>  <a class="el" href="_adafruit___v_c_n_l4040_8h.html#ae0530116d850afe762fe5a4e0399ada6">VCNL4040_ProximityType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Proximity interrupt types. </p>
+<p>Allowed values for <code>enableProximityInterrupts</code>. </p>
+
+</div>
+</div>
+<a id="aa28cb8b3fa7e57adb26bd60eec5a1bfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28cb8b3fa7e57adb26bd60eec5a1bfe">&#9670;&nbsp;</a></span>VCNL4040_InterruptType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#abc28ec92e4ecc64908ee3d33cb3f8215">interrupt_type</a>  <a class="el" href="_adafruit___v_c_n_l4040_8h.html#aa28cb8b3fa7e57adb26bd60eec5a1bfe">VCNL4040_InterruptType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt types. </p>
+<p>Values to be matched against the byte returned from <code>getInterruptStatus</code>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a9c706a0217fb9e0eb51c6fbacfecc887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c706a0217fb9e0eb51c6fbacfecc887">&#9670;&nbsp;</a></span>led_current</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a9c706a0217fb9e0eb51c6fbacfecc887">led_current</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Proximity LED current values. </p>
+<p>Allowed values for <code>setProximityLEDCurrent</code>. </p>
+
+</div>
+</div>
+<a id="a4f8ac1c9bbb4a45112465ec44fa336c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f8ac1c9bbb4a45112465ec44fa336c3">&#9670;&nbsp;</a></span>led_duty_cycle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a4f8ac1c9bbb4a45112465ec44fa336c3">led_duty_cycle</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Proximity LED duty cycle values. </p>
+<p>Allowed values for <code>setProximityLEDDutyCycle</code>. </p>
+
+</div>
+</div>
+<a id="a8a9566fd6d8413c5ca50f47f5f0f05dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a9566fd6d8413c5ca50f47f5f0f05dc">&#9670;&nbsp;</a></span>ambient_integration_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a8a9566fd6d8413c5ca50f47f5f0f05dc">ambient_integration_time</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ambient light integration time values. </p>
+<p>Allowed values for <code>setAmbientIntegrationTime</code>. </p>
+
+</div>
+</div>
+<a id="a7b802f7396002261b044270c730d8f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b802f7396002261b044270c730d8f83">&#9670;&nbsp;</a></span>proximity_integration_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a7b802f7396002261b044270c730d8f83">proximity_integration_time</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Proximity measurement integration time values. </p>
+<p>Allowed values for <code>setProximityIntegrationTime</code>. </p>
+
+</div>
+</div>
+<a id="a7403dd14f82be09f55fdac6edddebdc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7403dd14f82be09f55fdac6edddebdc2">&#9670;&nbsp;</a></span>proximity_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a7403dd14f82be09f55fdac6edddebdc2">proximity_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Proximity interrupt types. </p>
+<p>Allowed values for <code>enableProximityInterrupts</code>. </p>
+
+</div>
+</div>
+<a id="abc28ec92e4ecc64908ee3d33cb3f8215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc28ec92e4ecc64908ee3d33cb3f8215">&#9670;&nbsp;</a></span>interrupt_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_adafruit___v_c_n_l4040_8h.html#abc28ec92e4ecc64908ee3d33cb3f8215">interrupt_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt types. </p>
+<p>Values to be matched against the byte returned from <code>getInterruptStatus</code>. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

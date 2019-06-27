@@ -4,5 +4,6 @@ var searchData=
   ['adafruit_5fvcnl4040_2ecpp',['Adafruit_VCNL4040.cpp',['../_adafruit___v_c_n_l4040_8cpp.html',1,'']]],
   ['adafruit_5fvcnl4040_2eh',['Adafruit_VCNL4040.h',['../_adafruit___v_c_n_l4040_8h.html',1,'']]],
   ['als_5fconfig',['ALS_CONFIG',['../class_adafruit___v_c_n_l4040.html#a72534cd9620b7e602f71f7dcd5104d63',1,'Adafruit_VCNL4040']]],
+  ['ambient_5fintegration_5ftime',['ambient_integration_time',['../_adafruit___v_c_n_l4040_8h.html#a8a9566fd6d8413c5ca50f47f5f0f05dc',1,'Adafruit_VCNL4040.h']]],
   ['adafruit_20vcnl4040_20proximity_20and_20ambient_20light_20sensor_20library',['Adafruit VCNL4040 proximity and ambient light sensor library',['../index.html',1,'']]]
 ];
