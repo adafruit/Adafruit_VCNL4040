@@ -70,24 +70,15 @@ boolean Adafruit_VCNL4040::_init(void) {
     return false;
   }
 
-  ALS_CONFIG = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_CONFIG, 2);  ALS_CONFIG = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_CONFIG, 2);
-
+  ALS_CONFIG = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_CONFIG, 2);
   PS_CONFIG_12 = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_CONF1_L, 2);
   PS_MS = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_MS_H, 2);
 
-  Adafruit_BusIO_RegisterBits ps_disable = Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 1, 0);
-  Adafruit_BusIO_RegisterBits ps_hd = Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 1, 11);
-  
-  Adafruit_BusIO_RegisterBits als_disable = Adafruit_BusIO_RegisterBits(ALS_CONFIG, 1, 0);
-  
-  Adafruit_BusIO_RegisterBits white_disable = Adafruit_BusIO_RegisterBits(PS_MS, 1, 15);
+  enableProximity(true);
+  enableWhiteLight(true);
+  enableAmbientLight(true);
+  setProximityHighResolution(true);
 
-  ps_disable.write(false);
-  ps_hd.write(true);
-
-  als_disable.write(false);
-  white_disable.write(false);
-  // turn on ints
   Serial.println("Got good device ID, returning true from _init()");
 
   return true;
@@ -291,7 +282,6 @@ void Adafruit_VCNL4040::setAmbientIntegrationTime(VCNL4040_AmbientIntegration in
 void Adafruit_VCNL4040::setProximityLEDCurrent(VCNL4040_LEDCurrent led_current){
     Adafruit_BusIO_RegisterBits led_current_config = 
       Adafruit_BusIO_RegisterBits(PS_MS, 2, 8);
-    // delay(50);
     led_current_config.write(led_current);
 }
 
@@ -305,6 +295,54 @@ void Adafruit_VCNL4040::setProximityLEDCurrent(VCNL4040_LEDCurrent led_current){
 void Adafruit_VCNL4040::setProximityLEDDutyCycle(VCNL4040_LEDDutyCycle duty_cycle){
     Adafruit_BusIO_RegisterBits led_duty_cycle_config =
       Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 2, 6);
-    // delay(50);
     led_duty_cycle_config.write(duty_cycle);
+}
+
+/**************************************************************************/
+/*!
+    @brief Enables or disables proximity measurements.
+    @param  enable
+            Set to true to enable proximity measurements,
+            set to false to disable.
+*/
+void Adafruit_VCNL4040::enableProximity(bool enable){
+  Adafruit_BusIO_RegisterBits ps_disable =
+    Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 1, 0);
+  ps_disable.write(!enable);
+}
+/**************************************************************************/
+/*!
+    @brief Sets the resolution of proximity measurements
+    @param  high_resolution
+            Set to true to take 16-bit measurements for proximity,
+            set to faluse to use 12-bit measurements.
+*/
+void Adafruit_VCNL4040::setProximityHighResolution(bool high_resolution){
+  Adafruit_BusIO_RegisterBits ps_hd =
+    Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 1, 11);
+  ps_hd.write(high_resolution);
+}
+/**************************************************************************/
+/*!
+    @brief Enables ambient light measurements
+    @param  enable
+            Set to true to enable ambient light measurements,
+            set to false to disable.
+*/
+void Adafruit_VCNL4040::enableAmbientLight(bool enable){
+  Adafruit_BusIO_RegisterBits als_disable =
+    Adafruit_BusIO_RegisterBits(ALS_CONFIG, 1, 0);
+  als_disable.write(!enable);
+}
+/**************************************************************************/
+/*!
+    @brief Enables white light measurements
+    @param  enable
+            Set to true to enable white light measurements,
+            set to false to disable.
+*/
+void Adafruit_VCNL4040::enableWhiteLight(bool enable){
+  Adafruit_BusIO_RegisterBits white_disable =
+    Adafruit_BusIO_RegisterBits(PS_MS, 1, 15);
+  white_disable.write(!enable);
 }

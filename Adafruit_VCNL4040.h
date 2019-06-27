@@ -180,6 +180,10 @@ public:
   void setAmbientIntegrationTime(VCNL4040_AmbientIntegration integration_time);
   void setProximityLEDCurrent(VCNL4040_LEDCurrent led_current);
   void setProximityLEDDutyCycle(VCNL4040_LEDDutyCycle duty_cycle);
+  void enableProximity(bool enable);
+  void setProximityHighResolution(bool high_resolution);
+  void enableAmbientLight(bool enable);
+  void enableWhiteLight(bool enable);
 
 
   Adafruit_BusIO_Register 
