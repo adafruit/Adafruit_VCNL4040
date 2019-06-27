@@ -107,7 +107,7 @@ typedef enum led_duty_cycle {
 /**
  * @brief Ambient light integration time values
  *
- * Allowed values for `setAmbient`.
+ * Allowed values for `setAmbientIntegrationTime`.
  */
 typedef enum ambient_integration_time {
   VCNL4040_AMBIENT_INTEGRATION_TIME_80MS,
@@ -116,6 +116,12 @@ typedef enum ambient_integration_time {
   VCNL4040_AMBIENT_INTEGRATION_TIME_640MS,
 } VCNL4040_AmbientIntegration;
 
+
+/**
+ * @brief Proximity measurement integration time values
+ *
+ * Allowed values for `setProximityIntegrationTime`.
+ */
 typedef enum proximity_integration_time {
   VCNL4040_PROXIMITY_INTEGRATION_TIME_1T,
   VCNL4040_PROXIMITY_INTEGRATION_TIME_1_5T,
