@@ -39,6 +39,93 @@
 #define VCNL4040_INT_FLAG           0x0B ///< Interrupt status register
 #define VCNL4040_DEVICE_ID          0x0C ///< Device ID
 
+
+
+/*
+    # Ambient light sensor integration times
+    ALS_80MS = const(0x0)
+    ALS_160MS = const(0x1)
+    ALS_320MS = const(0x2)
+    ALS_640MS = const(0x3)
+
+    # Proximity sensor integration times
+    PS_1T = const(0x0)
+    PS_1_5T = const(0x1)
+    PS_2T = const(0x2)
+    PS_2_5T = const(0x3)
+    PS_3T = const(0x4)
+    PS_3_5T = const(0x5)
+    PS_4T = const(0x6)
+    PS_8T = const(0x7)
+
+    # LED current settings
+    LED_50MA = const(0x0)
+    LED_75MA = const(0x1)
+    LED_100MA = const(0x2)
+    LED_120MA = const(0x3)
+    LED_140MA = const(0x4)
+    LED_160MA = const(0x5)
+    LED_180MA = const(0x6)
+    LED_200MA = const(0x7)
+
+    # LED duty cycle settings
+    LED_1_40 = const(0x0)
+    LED_1_80 = const(0x1)
+    LED_1_160 = const(0x2)
+    LED_1_320 = const(0x3)
+ */
+
+/**
+ * @brief Proximity LED current values
+ *
+ * Allowed values for `setProximityLEDCurrent`.
+ */
+typedef enum led_current {
+  VCNL4040_LED_CURRENT_50MA,
+  VCNL4040_LED_CURRENT_75MA,
+  VCNL4040_LED_CURRENT_100MA,
+  VCNL4040_LED_CURRENT_120MA,
+  VCNL4040_LED_CURRENT_140MA,
+  VCNL4040_LED_CURRENT_160MA,
+  VCNL4040_LED_CURRENT_180MA,
+  VCNL4040_LED_CURRENT_200MA,
+} VCNL4040_LEDCurrent;
+
+/**
+ * @brief Proximity LED duty cycle values
+ *
+ * Allowed values for `setProximityLEDDutyCycle`.
+ */
+typedef enum led_duty_cycle {
+  VCNL4040_LED_DUTY_1_40,
+  VCNL4040_LED_DUTY_1_80,
+  VCNL4040_LED_DUTY_1_160,
+  VCNL4040_LED_DUTY_1_320,
+} VCNL4040_LEDDutyCycle;
+
+
+/**
+ * @brief Ambient light integration time values
+ *
+ * Allowed values for `setAmbient`.
+ */
+typedef enum ambient_integration_time {
+  VCNL4040_AMBIENT_INTEGRATION_TIME_80MS,
+  VCNL4040_AMBIENT_INTEGRATION_TIME_160MS,
+  VCNL4040_AMBIENT_INTEGRATION_TIME_320MS,
+  VCNL4040_AMBIENT_INTEGRATION_TIME_640MS,
+} VCNL4040_AmbientIntegration;
+
+typedef enum proximity_integration_time {
+  VCNL4040_PROXIMITY_INTEGRATION_TIME_1T,
+  VCNL4040_PROXIMITY_INTEGRATION_TIME_1_5T,
+  VCNL4040_PROXIMITY_INTEGRATION_TIME_2T,
+  VCNL4040_PROXIMITY_INTEGRATION_TIME_2_5T,
+  VCNL4040_PROXIMITY_INTEGRATION_TIME_3T,
+  VCNL4040_PROXIMITY_INTEGRATION_TIME_3_5T,
+  VCNL4040_PROXIMITY_INTEGRATION_TIME_4T,
+  VCNL4040_PROXIMITY_INTEGRATION_TIME_8T,
+} VCNL4040_ProximityIntegration;
 /**
  * @brief Proximity interrupt types
  *
@@ -83,6 +170,9 @@ public:
   void enableProximityInterrupts(VCNL4040_ProximityType interrupt_condition);
   void setProximityLowThreshold(uint16_t low_threshold);
   void setProximityHighThreshold(uint16_t high_threshold);
+  void setProximityIntegrationTime(VCNL4040_ProximityIntegration integration_time);
+  void setAmbientIntegrationTime(VCNL4040_AmbientIntegration integration_time);
+  void setProximityLEDCurrent(VCNL4040_LEDCurrent led_current);
 
 
   Adafruit_BusIO_Register 

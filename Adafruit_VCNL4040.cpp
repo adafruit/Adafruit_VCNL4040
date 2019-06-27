@@ -70,7 +70,8 @@ boolean Adafruit_VCNL4040::_init(void) {
     return false;
   }
 
-  ALS_CONFIG = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_CONFIG, 2);
+  ALS_CONFIG = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_CONFIG, 2);  ALS_CONFIG = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_CONFIG, 2);
+
   PS_CONFIG_12 = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_CONF1_L, 2);
   PS_MS = new Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_MS_H, 2);
 
@@ -249,4 +250,47 @@ void Adafruit_VCNL4040::setProximityHighThreshold(uint16_t high_threshold){
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_PS_THDH, 2);
 
   proximity_high_threshold.write(high_threshold);
+}
+
+/**************************************************************************/
+/*!
+    @brief Sets the integration time for proximity sensing measurements.
+    @param  integration_time
+            The integration time to use for proximity measurements. Must be a
+            `VCNL4040_ProximityIntegration`.
+*/
+void Adafruit_VCNL4040::setProximityIntegrationTime(VCNL4040_ProximityIntegration integration_time){
+    Adafruit_BusIO_RegisterBits proximity_int_config = 
+    Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 3, 1);
+    delay(50);
+    proximity_int_config.write(integration_time);
+}
+
+/**************************************************************************/
+/*!
+    @brief Sets the integration time for ambient light sensing measurements.
+    @param  integration_time
+            The integration time to use for ambient light measurements. Must be a
+            `VCNL4040_AmbientIntegration`.
+*/
+void Adafruit_VCNL4040::setAmbientIntegrationTime(VCNL4040_AmbientIntegration integration_time){
+    Adafruit_BusIO_RegisterBits ambient_int_config = 
+    Adafruit_BusIO_RegisterBits(ALS_CONFIG, 2, 6);
+    delay(50);
+    ambient_int_config.write(integration_time);
+}
+
+
+/**************************************************************************/
+/*!
+    @brief Sets the current for the LED used for proximity measurements.
+    @param  led_current
+            The current value to be used for proximity measurements. Must be a
+            `VCNL4040_LEDCurrent`.
+*/
+void Adafruit_VCNL4040::setProximityLEDCurrent(VCNL4040_LEDCurrent led_current){
+    Adafruit_BusIO_RegisterBits led_current_config = 
+    Adafruit_BusIO_RegisterBits(PS_MS, 2, 8);
+    // delay(50);
+    led_current_config.write(led_current);
 }
