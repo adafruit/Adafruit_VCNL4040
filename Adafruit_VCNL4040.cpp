@@ -275,7 +275,7 @@ void Adafruit_VCNL4040::setProximityIntegrationTime(VCNL4040_ProximityIntegratio
 */
 void Adafruit_VCNL4040::setAmbientIntegrationTime(VCNL4040_AmbientIntegration integration_time){
     Adafruit_BusIO_RegisterBits ambient_int_config = 
-    Adafruit_BusIO_RegisterBits(ALS_CONFIG, 2, 6);
+      Adafruit_BusIO_RegisterBits(ALS_CONFIG, 2, 6);
     delay(50);
     ambient_int_config.write(integration_time);
 }
@@ -290,7 +290,21 @@ void Adafruit_VCNL4040::setAmbientIntegrationTime(VCNL4040_AmbientIntegration in
 */
 void Adafruit_VCNL4040::setProximityLEDCurrent(VCNL4040_LEDCurrent led_current){
     Adafruit_BusIO_RegisterBits led_current_config = 
-    Adafruit_BusIO_RegisterBits(PS_MS, 2, 8);
+      Adafruit_BusIO_RegisterBits(PS_MS, 2, 8);
     // delay(50);
     led_current_config.write(led_current);
+}
+
+/**************************************************************************/
+/*!
+    @brief Sets the duty cycle for the LED used for proximity measurements.
+    @param  duty_cycle
+            The duty cycle value to be used for proximity measurements. Must be a
+            `VCNL4040_LEDDutyCycle`.
+*/
+void Adafruit_VCNL4040::setProximityLEDDutyCycle(VCNL4040_LEDDutyCycle duty_cycle){
+    Adafruit_BusIO_RegisterBits led_duty_cycle_config =
+      Adafruit_BusIO_RegisterBits(PS_CONFIG_12, 2, 6);
+    // delay(50);
+    led_duty_cycle_config.write(duty_cycle);
 }
