@@ -167,6 +167,7 @@ public:
   uint16_t getProximity(void);
   uint16_t getAmbientLight(void);
   uint16_t getWhiteLight(void);
+  uint16_t getLux(void);
   
   void enableProximity(bool enable);
   void enableAmbientLight(bool enable);
@@ -184,7 +185,7 @@ public:
 
 
   void enableProximityInterrupts(VCNL4040_ProximityType interrupt_condition);
-  
+
   uint16_t getProximityLowThreshold(void);
   void setProximityLowThreshold(uint16_t low_threshold);
 

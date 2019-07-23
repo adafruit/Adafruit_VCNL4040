@@ -119,6 +119,20 @@ uint16_t Adafruit_VCNL4040::getWhiteLight(void) {
   return (int16_t)white_light.read();
 }
 
+/**************************************************************************/
+/*!
+    @brief Gets the current ambient light sensor in Lux.
+    @return The current ambient light measurement in Lux
+*/
+/**************************************************************************/
+uint16_t Adafruit_VCNL4040::getLux(void) {
+  Adafruit_BusIO_Register ambient_light =
+    Adafruit_BusIO_Register(i2c_dev, VCNL4040_ALS_DATA, 2);
+  // scale the lux depending on the value of the integration time
+  // see page 8 of the VCNL4040 application note:
+  // https://www.vishay.com/docs/84307/designingvcnl4040.pdf
+  return (ambient_light.read() * (0.1 /(1 << getAmbientIntegrationTime())));
+}
 /**************** Sensor Enable Functions   *******************************/
 
 /**************************************************************************/
@@ -361,7 +375,9 @@ VCNL4040_AmbientIntegration Adafruit_VCNL4040::getAmbientIntegrationTime(void){
 void Adafruit_VCNL4040::setAmbientIntegrationTime(VCNL4040_AmbientIntegration integration_time){
     Adafruit_BusIO_RegisterBits ambient_int_config =
       Adafruit_BusIO_RegisterBits(ALS_CONFIG, 2, 6);
-    delay(50);
+
+    // delay according to the integration time to let the reading at the old IT clear out
+    delay(((integration_time +1) * 80)+1);
     ambient_int_config.write(integration_time);
 }
 

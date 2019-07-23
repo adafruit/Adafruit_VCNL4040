@@ -6,7 +6,7 @@ Adafruit_VCNL4040 [![Build Status](https://travis-ci.com/adafruit/Adafruit_VCNL4
 This is the Adafruit VCNL4040 proximity and ambient light sensor library
 
 Tested and works great with the Adafruit VCNL4040 Breakout Board 
-* http://www.adafruit.com/products
+* https://www.adafruit.com/product/4161
 
 This chip uses I2C to communicate, 2 pins are required to interface
 
