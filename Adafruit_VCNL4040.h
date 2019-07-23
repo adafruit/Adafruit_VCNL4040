@@ -4,8 +4,8 @@
  * 	I2C Driver for VCNL4040 proximity and ambient light sensor library
  *
  * 	This is a library for the Adafruit VCNL4040 breakout:
- * 	http://www.adafruit.com/products
- *
+ * 	https://www.adafruit.com/product/4161
+ * 
  * 	Adafruit invests time and resources providing this open source code,
  *  please support Adafruit and open-source hardware by purchasing products from
  * 	Adafruit!
@@ -167,24 +167,44 @@ public:
   uint16_t getProximity(void);
   uint16_t getAmbientLight(void);
   uint16_t getWhiteLight(void);
-  void enableAmbientLightInterrupts(bool enable);
-  uint16_t getAmbientLightHighThreshold(void);
-  void setAmbientLightHighThreshold(uint16_t high_threshold);
-  uint16_t getAmbientLightLowThreshold(void);
-  void setAmbientLightLowThreshold(uint16_t low_threshold);
-  uint8_t getInterruptStatus(void);
-  void enableProximityInterrupts(VCNL4040_ProximityType interrupt_condition);
-  void setProximityLowThreshold(uint16_t low_threshold);
-  void setProximityHighThreshold(uint16_t high_threshold);
-  void setProximityIntegrationTime(VCNL4040_ProximityIntegration integration_time);
-  void setAmbientIntegrationTime(VCNL4040_AmbientIntegration integration_time);
-  void setProximityLEDCurrent(VCNL4040_LEDCurrent led_current);
-  void setProximityLEDDutyCycle(VCNL4040_LEDDutyCycle duty_cycle);
+  
   void enableProximity(bool enable);
-  void setProximityHighResolution(bool high_resolution);
   void enableAmbientLight(bool enable);
   void enableWhiteLight(bool enable);
 
+  uint8_t getInterruptStatus(void);
+  void enableAmbientLightInterrupts(bool enable);
+  
+  uint16_t getAmbientLightHighThreshold(void);
+  void setAmbientLightHighThreshold(uint16_t high_threshold);
+  
+  uint16_t getAmbientLightLowThreshold(void);
+  void setAmbientLightLowThreshold(uint16_t low_threshold);
+  
+
+
+  void enableProximityInterrupts(VCNL4040_ProximityType interrupt_condition);
+  
+  uint16_t getProximityLowThreshold(void);
+  void setProximityLowThreshold(uint16_t low_threshold);
+
+  uint16_t getProximityHighThreshold(void);
+  void setProximityHighThreshold(uint16_t high_threshold);
+
+  VCNL4040_ProximityIntegration getProximityIntegrationTime(void);
+  void setProximityIntegrationTime(VCNL4040_ProximityIntegration integration_time);
+  
+  VCNL4040_AmbientIntegration getAmbientIntegrationTime(void);
+  void setAmbientIntegrationTime(VCNL4040_AmbientIntegration integration_time);
+  
+  VCNL4040_LEDCurrent getProximityLEDCurrent(void);
+  void setProximityLEDCurrent(VCNL4040_LEDCurrent led_current);
+  
+  VCNL4040_LEDDutyCycle getProximityLEDDutyCycle(void);
+  void setProximityLEDDutyCycle(VCNL4040_LEDDutyCycle duty_cycle);
+
+  bool getProximityHighResolution(void);
+  void setProximityHighResolution(bool high_resolution);
 
   Adafruit_BusIO_Register 
     *PS_CONFIG_12,  ///< BusIO Register for PS_CONFIG1 and PS_CONFIG2
