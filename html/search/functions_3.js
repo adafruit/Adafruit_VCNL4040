@@ -5,6 +5,7 @@ var searchData=
   ['getambientlighthighthreshold',['getAmbientLightHighThreshold',['../class_adafruit___v_c_n_l4040.html#abc6a4ebc7158b9f4090f8876d3f80864',1,'Adafruit_VCNL4040']]],
   ['getambientlightlowthreshold',['getAmbientLightLowThreshold',['../class_adafruit___v_c_n_l4040.html#aaeae368d3727d967446cef4e8e5740f1',1,'Adafruit_VCNL4040']]],
   ['getinterruptstatus',['getInterruptStatus',['../class_adafruit___v_c_n_l4040.html#a5ec2ecad8ab1722dc68e81ea3c5387bd',1,'Adafruit_VCNL4040']]],
+  ['getlux',['getLux',['../class_adafruit___v_c_n_l4040.html#a6b76de6b61cb937a0f98ca561c525a4f',1,'Adafruit_VCNL4040']]],
   ['getproximity',['getProximity',['../class_adafruit___v_c_n_l4040.html#accdc33d3cc800395932f40ff7979b40d',1,'Adafruit_VCNL4040']]],
   ['getproximityhighresolution',['getProximityHighResolution',['../class_adafruit___v_c_n_l4040.html#ae8f197747d8625b970dc9cd3679486d4',1,'Adafruit_VCNL4040']]],
   ['getproximityhighthreshold',['getProximityHighThreshold',['../class_adafruit___v_c_n_l4040.html#a4062bbc0291dd20f15608758fa8cb971',1,'Adafruit_VCNL4040']]],
