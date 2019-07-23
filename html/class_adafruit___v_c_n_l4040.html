@@ -90,6 +90,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aac6d624ff54971d00ac12c44f92eb781"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#aac6d624ff54971d00ac12c44f92eb781">getWhiteLight</a> (void)</td></tr>
 <tr class="memdesc:aac6d624ff54971d00ac12c44f92eb781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current white light value.  <a href="#aac6d624ff54971d00ac12c44f92eb781">More...</a><br /></td></tr>
 <tr class="separator:aac6d624ff54971d00ac12c44f92eb781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb77f218065d491f6f11963224d78f8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#afb77f218065d491f6f11963224d78f8f">enableProximity</a> (bool enable)</td></tr>
+<tr class="memdesc:afb77f218065d491f6f11963224d78f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables proximity measurements.  <a href="#afb77f218065d491f6f11963224d78f8f">More...</a><br /></td></tr>
+<tr class="separator:afb77f218065d491f6f11963224d78f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3299c4f314a32ba7cc6c84e2e9dccdd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a3299c4f314a32ba7cc6c84e2e9dccdd1">enableAmbientLight</a> (bool enable)</td></tr>
+<tr class="memdesc:a3299c4f314a32ba7cc6c84e2e9dccdd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables ambient light measurements.  <a href="#a3299c4f314a32ba7cc6c84e2e9dccdd1">More...</a><br /></td></tr>
+<tr class="separator:a3299c4f314a32ba7cc6c84e2e9dccdd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab363528142ea3360ea6e628a6348327b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#ab363528142ea3360ea6e628a6348327b">enableWhiteLight</a> (bool enable)</td></tr>
+<tr class="memdesc:ab363528142ea3360ea6e628a6348327b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables white light measurements.  <a href="#ab363528142ea3360ea6e628a6348327b">More...</a><br /></td></tr>
+<tr class="separator:ab363528142ea3360ea6e628a6348327b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ec2ecad8ab1722dc68e81ea3c5387bd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a5ec2ecad8ab1722dc68e81ea3c5387bd">getInterruptStatus</a> (void)</td></tr>
+<tr class="memdesc:a5ec2ecad8ab1722dc68e81ea3c5387bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets and clears the interrupt status register.  <a href="#a5ec2ecad8ab1722dc68e81ea3c5387bd">More...</a><br /></td></tr>
+<tr class="separator:a5ec2ecad8ab1722dc68e81ea3c5387bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd3cda8a761fd26f7e11458d16cf3e3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#afd3cda8a761fd26f7e11458d16cf3e3b">enableAmbientLightInterrupts</a> (bool enable)</td></tr>
 <tr class="memdesc:afd3cda8a761fd26f7e11458d16cf3e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables ambient light based interrupts.  <a href="#afd3cda8a761fd26f7e11458d16cf3e3b">More...</a><br /></td></tr>
 <tr class="separator:afd3cda8a761fd26f7e11458d16cf3e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,47 +112,56 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac709bfb5b971b424d4f8a2a67cd1b1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the ambient light high threshold.  <a href="#ac709bfb5b971b424d4f8a2a67cd1b1a0">More...</a><br /></td></tr>
 <tr class="separator:ac709bfb5b971b424d4f8a2a67cd1b1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeae368d3727d967446cef4e8e5740f1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#aaeae368d3727d967446cef4e8e5740f1">getAmbientLightLowThreshold</a> (void)</td></tr>
-<tr class="memdesc:aaeae368d3727d967446cef4e8e5740f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the ambient light low threshold.  <a href="#aaeae368d3727d967446cef4e8e5740f1">More...</a><br /></td></tr>
+<tr class="memdesc:aaeae368d3727d967446cef4e8e5740f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the ambient light low threshold.  <a href="#aaeae368d3727d967446cef4e8e5740f1">More...</a><br /></td></tr>
 <tr class="separator:aaeae368d3727d967446cef4e8e5740f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae5c41b6b679a48d1670d758cc42ffd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#aae5c41b6b679a48d1670d758cc42ffd2">setAmbientLightLowThreshold</a> (uint16_t low_threshold)</td></tr>
 <tr class="memdesc:aae5c41b6b679a48d1670d758cc42ffd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the ambient light low threshold.  <a href="#aae5c41b6b679a48d1670d758cc42ffd2">More...</a><br /></td></tr>
 <tr class="separator:aae5c41b6b679a48d1670d758cc42ffd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ec2ecad8ab1722dc68e81ea3c5387bd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a5ec2ecad8ab1722dc68e81ea3c5387bd">getInterruptStatus</a> (void)</td></tr>
-<tr class="memdesc:a5ec2ecad8ab1722dc68e81ea3c5387bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets and clears the interrupt status register.  <a href="#a5ec2ecad8ab1722dc68e81ea3c5387bd">More...</a><br /></td></tr>
-<tr class="separator:a5ec2ecad8ab1722dc68e81ea3c5387bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d6d32b8e68c8c310260e4a051d9848e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a8d6d32b8e68c8c310260e4a051d9848e">enableProximityInterrupts</a> (<a class="el" href="_adafruit___v_c_n_l4040_8h.html#ae0530116d850afe762fe5a4e0399ada6">VCNL4040_ProximityType</a> interrupt_condition)</td></tr>
 <tr class="memdesc:a8d6d32b8e68c8c310260e4a051d9848e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables or enables proximity interrupts under a given condition.  <a href="#a8d6d32b8e68c8c310260e4a051d9848e">More...</a><br /></td></tr>
 <tr class="separator:a8d6d32b8e68c8c310260e4a051d9848e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f91ee7bdfb62a7028980c81c1c006c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a06f91ee7bdfb62a7028980c81c1c006c">getProximityLowThreshold</a> (void)</td></tr>
+<tr class="memdesc:a06f91ee7bdfb62a7028980c81c1c006c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the proximity low threshold.  <a href="#a06f91ee7bdfb62a7028980c81c1c006c">More...</a><br /></td></tr>
+<tr class="separator:a06f91ee7bdfb62a7028980c81c1c006c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e95088dc26ee6eaa3b20416c49a1564"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a9e95088dc26ee6eaa3b20416c49a1564">setProximityLowThreshold</a> (uint16_t low_threshold)</td></tr>
 <tr class="memdesc:a9e95088dc26ee6eaa3b20416c49a1564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the proximity low threshold.  <a href="#a9e95088dc26ee6eaa3b20416c49a1564">More...</a><br /></td></tr>
 <tr class="separator:a9e95088dc26ee6eaa3b20416c49a1564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4062bbc0291dd20f15608758fa8cb971"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a4062bbc0291dd20f15608758fa8cb971">getProximityHighThreshold</a> (void)</td></tr>
+<tr class="memdesc:a4062bbc0291dd20f15608758fa8cb971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the proximity high threshold.  <a href="#a4062bbc0291dd20f15608758fa8cb971">More...</a><br /></td></tr>
+<tr class="separator:a4062bbc0291dd20f15608758fa8cb971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd170fe4767068a7d830df4afcc631b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#afd170fe4767068a7d830df4afcc631b1">setProximityHighThreshold</a> (uint16_t high_threshold)</td></tr>
 <tr class="memdesc:afd170fe4767068a7d830df4afcc631b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the proximity high threshold.  <a href="#afd170fe4767068a7d830df4afcc631b1">More...</a><br /></td></tr>
 <tr class="separator:afd170fe4767068a7d830df4afcc631b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac54579f49a7ac7625d5f44c2a81177c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a1e46de4c400ffbfc43a1ed7dba588fdb">VCNL4040_ProximityIntegration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#ac54579f49a7ac7625d5f44c2a81177c6">getProximityIntegrationTime</a> (void)</td></tr>
+<tr class="memdesc:ac54579f49a7ac7625d5f44c2a81177c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the integration time for proximity sensing measurements.  <a href="#ac54579f49a7ac7625d5f44c2a81177c6">More...</a><br /></td></tr>
+<tr class="separator:ac54579f49a7ac7625d5f44c2a81177c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a5bc62da51725134d8cf41d5e4c7b93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a9a5bc62da51725134d8cf41d5e4c7b93">setProximityIntegrationTime</a> (<a class="el" href="_adafruit___v_c_n_l4040_8h.html#a1e46de4c400ffbfc43a1ed7dba588fdb">VCNL4040_ProximityIntegration</a> integration_time)</td></tr>
 <tr class="memdesc:a9a5bc62da51725134d8cf41d5e4c7b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the integration time for proximity sensing measurements.  <a href="#a9a5bc62da51725134d8cf41d5e4c7b93">More...</a><br /></td></tr>
 <tr class="separator:a9a5bc62da51725134d8cf41d5e4c7b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a957b615cfcdb86c65830bb25aba3176b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a583ff48e46a5229e2d47a002b2a6a7d1">VCNL4040_AmbientIntegration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a957b615cfcdb86c65830bb25aba3176b">getAmbientIntegrationTime</a> (void)</td></tr>
+<tr class="memdesc:a957b615cfcdb86c65830bb25aba3176b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the integration time for ambient light sensing measurements.  <a href="#a957b615cfcdb86c65830bb25aba3176b">More...</a><br /></td></tr>
+<tr class="separator:a957b615cfcdb86c65830bb25aba3176b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8aa86b71688cb0ec35bd0398a9eff964"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a8aa86b71688cb0ec35bd0398a9eff964">setAmbientIntegrationTime</a> (<a class="el" href="_adafruit___v_c_n_l4040_8h.html#a583ff48e46a5229e2d47a002b2a6a7d1">VCNL4040_AmbientIntegration</a> integration_time)</td></tr>
 <tr class="memdesc:a8aa86b71688cb0ec35bd0398a9eff964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the integration time for ambient light sensing measurements.  <a href="#a8aa86b71688cb0ec35bd0398a9eff964">More...</a><br /></td></tr>
 <tr class="separator:a8aa86b71688cb0ec35bd0398a9eff964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcf571dd841d9d0715018eb078eb3ff9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a76b05a9e94f79c1dcc7c921df75bbb5f">VCNL4040_LEDCurrent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#afcf571dd841d9d0715018eb078eb3ff9">getProximityLEDCurrent</a> (void)</td></tr>
+<tr class="memdesc:afcf571dd841d9d0715018eb078eb3ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current for the LED used for proximity measurements.  <a href="#afcf571dd841d9d0715018eb078eb3ff9">More...</a><br /></td></tr>
+<tr class="separator:afcf571dd841d9d0715018eb078eb3ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1535d7477438884b99b70cff6cf53cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#af1535d7477438884b99b70cff6cf53cc">setProximityLEDCurrent</a> (<a class="el" href="_adafruit___v_c_n_l4040_8h.html#a76b05a9e94f79c1dcc7c921df75bbb5f">VCNL4040_LEDCurrent</a> <a class="el" href="_adafruit___v_c_n_l4040_8h.html#a9c706a0217fb9e0eb51c6fbacfecc887">led_current</a>)</td></tr>
 <tr class="memdesc:af1535d7477438884b99b70cff6cf53cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current for the LED used for proximity measurements.  <a href="#af1535d7477438884b99b70cff6cf53cc">More...</a><br /></td></tr>
 <tr class="separator:af1535d7477438884b99b70cff6cf53cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73d65716a83ea202a87811eb5b9b67c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#aae90a57ec278038d64bfcedc779cdb16">VCNL4040_LEDDutyCycle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a73d65716a83ea202a87811eb5b9b67c0">getProximityLEDDutyCycle</a> (void)</td></tr>
+<tr class="memdesc:a73d65716a83ea202a87811eb5b9b67c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the duty cycle for the LED used for proximity measurements.  <a href="#a73d65716a83ea202a87811eb5b9b67c0">More...</a><br /></td></tr>
+<tr class="separator:a73d65716a83ea202a87811eb5b9b67c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0073dd11b9575916454c0cde832ef05c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a0073dd11b9575916454c0cde832ef05c">setProximityLEDDutyCycle</a> (<a class="el" href="_adafruit___v_c_n_l4040_8h.html#aae90a57ec278038d64bfcedc779cdb16">VCNL4040_LEDDutyCycle</a> duty_cycle)</td></tr>
 <tr class="memdesc:a0073dd11b9575916454c0cde832ef05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the duty cycle for the LED used for proximity measurements.  <a href="#a0073dd11b9575916454c0cde832ef05c">More...</a><br /></td></tr>
 <tr class="separator:a0073dd11b9575916454c0cde832ef05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb77f218065d491f6f11963224d78f8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#afb77f218065d491f6f11963224d78f8f">enableProximity</a> (bool enable)</td></tr>
-<tr class="memdesc:afb77f218065d491f6f11963224d78f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables proximity measurements.  <a href="#afb77f218065d491f6f11963224d78f8f">More...</a><br /></td></tr>
-<tr class="separator:afb77f218065d491f6f11963224d78f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8f197747d8625b970dc9cd3679486d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#ae8f197747d8625b970dc9cd3679486d4">getProximityHighResolution</a> (void)</td></tr>
+<tr class="memdesc:ae8f197747d8625b970dc9cd3679486d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the resolution of proximity measurements.  <a href="#ae8f197747d8625b970dc9cd3679486d4">More...</a><br /></td></tr>
+<tr class="separator:ae8f197747d8625b970dc9cd3679486d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d2ab7f1d495315091aafb89b8672670"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a3d2ab7f1d495315091aafb89b8672670">setProximityHighResolution</a> (bool high_resolution)</td></tr>
 <tr class="memdesc:a3d2ab7f1d495315091aafb89b8672670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the resolution of proximity measurements.  <a href="#a3d2ab7f1d495315091aafb89b8672670">More...</a><br /></td></tr>
 <tr class="separator:a3d2ab7f1d495315091aafb89b8672670"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3299c4f314a32ba7cc6c84e2e9dccdd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#a3299c4f314a32ba7cc6c84e2e9dccdd1">enableAmbientLight</a> (bool enable)</td></tr>
-<tr class="memdesc:a3299c4f314a32ba7cc6c84e2e9dccdd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables ambient light measurements.  <a href="#a3299c4f314a32ba7cc6c84e2e9dccdd1">More...</a><br /></td></tr>
-<tr class="separator:a3299c4f314a32ba7cc6c84e2e9dccdd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab363528142ea3360ea6e628a6348327b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___v_c_n_l4040.html#ab363528142ea3360ea6e628a6348327b">enableWhiteLight</a> (bool enable)</td></tr>
-<tr class="memdesc:ab363528142ea3360ea6e628a6348327b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables white light measurements.  <a href="#ab363528142ea3360ea6e628a6348327b">More...</a><br /></td></tr>
-<tr class="separator:ab363528142ea3360ea6e628a6348327b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -261,6 +282,105 @@ Adafruit_BusIO_Register *&#160;</td><td class="memItemRight" valign="bottom"><a 
 
 </div>
 </div>
+<a id="afb77f218065d491f6f11963224d78f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb77f218065d491f6f11963224d78f8f">&#9670;&nbsp;</a></span>enableProximity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Adafruit_VCNL4040::enableProximity </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables or disables proximity measurements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>Set to true to enable proximity measurements, set to false to disable. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3299c4f314a32ba7cc6c84e2e9dccdd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3299c4f314a32ba7cc6c84e2e9dccdd1">&#9670;&nbsp;</a></span>enableAmbientLight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Adafruit_VCNL4040::enableAmbientLight </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables ambient light measurements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>Set to true to enable ambient light measurements, set to false to disable. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab363528142ea3360ea6e628a6348327b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab363528142ea3360ea6e628a6348327b">&#9670;&nbsp;</a></span>enableWhiteLight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Adafruit_VCNL4040::enableWhiteLight </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables white light measurements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>Set to true to enable white light measurements, set to false to disable. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5ec2ecad8ab1722dc68e81ea3c5387bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ec2ecad8ab1722dc68e81ea3c5387bd">&#9670;&nbsp;</a></span>getInterruptStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Adafruit_VCNL4040::getInterruptStatus </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets and clears the interrupt status register. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current value of the interrupt status register. Indivitual interrupt types can be checked by anding the returned byte with the members of <code>VCNL4040_InterruptType</code>:<code>VCNL4040_PROXIMITY_AWAY</code>, <code>VCNL4040_PROXIMITY_CLOSE</code>, <code>PROXIMITY_LOW</code>, or <code>PROXIMITY_HIGH</code> </dd></dl>
+
+</div>
+</div>
 <a id="afd3cda8a761fd26f7e11458d16cf3e3b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd3cda8a761fd26f7e11458d16cf3e3b">&#9670;&nbsp;</a></span>enableAmbientLightInterrupts()</h2>
 
@@ -350,7 +470,7 @@ Adafruit_BusIO_Register *&#160;</td><td class="memItemRight" valign="bottom"><a 
       </table>
 </div><div class="memdoc">
 
-<p>Sets the ambient light low threshold. </p>
+<p>Gets the ambient light low threshold. </p>
 <dl class="section return"><dt>Returns</dt><dd>the current ambient light low threshold </dd></dl>
 
 </div>
@@ -381,27 +501,6 @@ Adafruit_BusIO_Register *&#160;</td><td class="memItemRight" valign="bottom"><a 
 
 </div>
 </div>
-<a id="a5ec2ecad8ab1722dc68e81ea3c5387bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ec2ecad8ab1722dc68e81ea3c5387bd">&#9670;&nbsp;</a></span>getInterruptStatus()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t Adafruit_VCNL4040::getInterruptStatus </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets and clears the interrupt status register. </p>
-<dl class="section return"><dt>Returns</dt><dd>The current value of the interrupt status register. Indivitual interrupt types can be checked by anding the returned byte with the members of <code>VCNL4040_InterruptType</code>:<code>VCNL4040_PROXIMITY_AWAY</code>, <code>VCNL4040_PROXIMITY_CLOSE</code>, <code>PROXIMITY_LOW</code>, or <code>PROXIMITY_HIGH</code> </dd></dl>
-
-</div>
-</div>
 <a id="a8d6d32b8e68c8c310260e4a051d9848e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d6d32b8e68c8c310260e4a051d9848e">&#9670;&nbsp;</a></span>enableProximityInterrupts()</h2>
 
@@ -425,6 +524,27 @@ Adafruit_BusIO_Register *&#160;</td><td class="memItemRight" valign="bottom"><a 
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a06f91ee7bdfb62a7028980c81c1c006c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f91ee7bdfb62a7028980c81c1c006c">&#9670;&nbsp;</a></span>getProximityLowThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Adafruit_VCNL4040::getProximityLowThreshold </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the proximity low threshold. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current low threshold </dd></dl>
 
 </div>
 </div>
@@ -454,6 +574,27 @@ Adafruit_BusIO_Register *&#160;</td><td class="memItemRight" valign="bottom"><a 
 
 </div>
 </div>
+<a id="a4062bbc0291dd20f15608758fa8cb971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4062bbc0291dd20f15608758fa8cb971">&#9670;&nbsp;</a></span>getProximityHighThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Adafruit_VCNL4040::getProximityHighThreshold </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the proximity high threshold. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current high threshold </dd></dl>
+
+</div>
+</div>
 <a id="afd170fe4767068a7d830df4afcc631b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd170fe4767068a7d830df4afcc631b1">&#9670;&nbsp;</a></span>setProximityHighThreshold()</h2>
 
@@ -477,6 +618,27 @@ Adafruit_BusIO_Register *&#160;</td><td class="memItemRight" valign="bottom"><a 
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ac54579f49a7ac7625d5f44c2a81177c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac54579f49a7ac7625d5f44c2a81177c6">&#9670;&nbsp;</a></span>getProximityIntegrationTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a1e46de4c400ffbfc43a1ed7dba588fdb">VCNL4040_ProximityIntegration</a> Adafruit_VCNL4040::getProximityIntegrationTime </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the integration time for proximity sensing measurements. </p>
+<dl class="section return"><dt>Returns</dt><dd>The integration time being used for proximity measurements. </dd></dl>
 
 </div>
 </div>
@@ -506,6 +668,27 @@ Adafruit_BusIO_Register *&#160;</td><td class="memItemRight" valign="bottom"><a 
 
 </div>
 </div>
+<a id="a957b615cfcdb86c65830bb25aba3176b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a957b615cfcdb86c65830bb25aba3176b">&#9670;&nbsp;</a></span>getAmbientIntegrationTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a583ff48e46a5229e2d47a002b2a6a7d1">VCNL4040_AmbientIntegration</a> Adafruit_VCNL4040::getAmbientIntegrationTime </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the integration time for ambient light sensing measurements. </p>
+<dl class="section return"><dt>Returns</dt><dd>The integration time being used for ambient light measurements. </dd></dl>
+
+</div>
+</div>
 <a id="a8aa86b71688cb0ec35bd0398a9eff964"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8aa86b71688cb0ec35bd0398a9eff964">&#9670;&nbsp;</a></span>setAmbientIntegrationTime()</h2>
 
@@ -529,6 +712,27 @@ Adafruit_BusIO_Register *&#160;</td><td class="memItemRight" valign="bottom"><a 
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="afcf571dd841d9d0715018eb078eb3ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf571dd841d9d0715018eb078eb3ff9">&#9670;&nbsp;</a></span>getProximityLEDCurrent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#a76b05a9e94f79c1dcc7c921df75bbb5f">VCNL4040_LEDCurrent</a> Adafruit_VCNL4040::getProximityLEDCurrent </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the current for the LED used for proximity measurements. </p>
+<dl class="section return"><dt>Returns</dt><dd>The LED current value being used for proximity measurements. </dd></dl>
 
 </div>
 </div>
@@ -558,6 +762,27 @@ Adafruit_BusIO_Register *&#160;</td><td class="memItemRight" valign="bottom"><a 
 
 </div>
 </div>
+<a id="a73d65716a83ea202a87811eb5b9b67c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73d65716a83ea202a87811eb5b9b67c0">&#9670;&nbsp;</a></span>getProximityLEDDutyCycle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#aae90a57ec278038d64bfcedc779cdb16">VCNL4040_LEDDutyCycle</a> Adafruit_VCNL4040::getProximityLEDDutyCycle </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the duty cycle for the LED used for proximity measurements. </p>
+<dl class="section return"><dt>Returns</dt><dd>The duty cycle value being used for proximity measurements. </dd></dl>
+
+</div>
+</div>
 <a id="a0073dd11b9575916454c0cde832ef05c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0073dd11b9575916454c0cde832ef05c">&#9670;&nbsp;</a></span>setProximityLEDDutyCycle()</h2>
 
@@ -584,29 +809,24 @@ Adafruit_BusIO_Register *&#160;</td><td class="memItemRight" valign="bottom"><a 
 
 </div>
 </div>
-<a id="afb77f218065d491f6f11963224d78f8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb77f218065d491f6f11963224d78f8f">&#9670;&nbsp;</a></span>enableProximity()</h2>
+<a id="ae8f197747d8625b970dc9cd3679486d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8f197747d8625b970dc9cd3679486d4">&#9670;&nbsp;</a></span>getProximityHighResolution()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Adafruit_VCNL4040::enableProximity </td>
+          <td class="memname">bool Adafruit_VCNL4040::getProximityHighResolution </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enables or disables proximity measurements. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enable</td><td>Set to true to enable proximity measurements, set to false to disable. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Gets the resolution of proximity measurements. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current proximity measurement resolution If true, proximity measurements are 16-bit, If false, proximity measurements are 12-bit, </dd></dl>
 
 </div>
 </div>
@@ -630,58 +850,6 @@ Adafruit_BusIO_Register *&#160;</td><td class="memItemRight" valign="bottom"><a 
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">high_resolution</td><td>Set to true to take 16-bit measurements for proximity, set to faluse to use 12-bit measurements. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3299c4f314a32ba7cc6c84e2e9dccdd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3299c4f314a32ba7cc6c84e2e9dccdd1">&#9670;&nbsp;</a></span>enableAmbientLight()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Adafruit_VCNL4040::enableAmbientLight </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enable</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enables ambient light measurements. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enable</td><td>Set to true to enable ambient light measurements, set to false to disable. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab363528142ea3360ea6e628a6348327b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab363528142ea3360ea6e628a6348327b">&#9670;&nbsp;</a></span>enableWhiteLight()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Adafruit_VCNL4040::enableWhiteLight </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enable</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enables white light measurements. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enable</td><td>Set to true to enable white light measurements, set to false to disable. </td></tr>
   </table>
   </dd>
 </dl>
