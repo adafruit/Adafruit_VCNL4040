@@ -116,7 +116,11 @@ uint16_t Adafruit_VCNL4040::getWhiteLight(void) {
   Adafruit_BusIO_Register white_light =
     Adafruit_BusIO_Register(i2c_dev, VCNL4040_WHITE_DATA, 2);
   delay(10);
-  return (int16_t)white_light.read();
+
+  // scale the light depending on the value of the integration time
+  // see page 8 of the VCNL4040 application note:
+  // https://www.vishay.com/docs/84307/designingvcnl4040.pdf
+  return (white_light.read() * (0.1 /(1 << getAmbientIntegrationTime())));
 }
 
 /**************************************************************************/
