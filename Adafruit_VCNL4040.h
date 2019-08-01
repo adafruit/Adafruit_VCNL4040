@@ -1,7 +1,7 @@
 /*!
  *  @file Adafruit_VCNL4040.h
  *
- * 	I2C Driver for VCNL4040 proximity and ambient light sensor library
+ * 	I2C Driver for VCNL4040 proximity and ambient light sensor
  *
  * 	This is a library for the Adafruit VCNL4040 breakout:
  * 	https://www.adafruit.com/product/4161
@@ -38,42 +38,6 @@
 #define VCNL4040_WHITE_DATA         0x0A ///< White light sensor data register
 #define VCNL4040_INT_FLAG           0x0B ///< Interrupt status register
 #define VCNL4040_DEVICE_ID          0x0C ///< Device ID
-
-
-
-/*
-    # Ambient light sensor integration times
-    ALS_80MS = const(0x0)
-    ALS_160MS = const(0x1)
-    ALS_320MS = const(0x2)
-    ALS_640MS = const(0x3)
-
-    # Proximity sensor integration times
-    PS_1T = const(0x0)
-    PS_1_5T = const(0x1)
-    PS_2T = const(0x2)
-    PS_2_5T = const(0x3)
-    PS_3T = const(0x4)
-    PS_3_5T = const(0x5)
-    PS_4T = const(0x6)
-    PS_8T = const(0x7)
-
-    # LED current settings
-    LED_50MA = const(0x0)
-    LED_75MA = const(0x1)
-    LED_100MA = const(0x2)
-    LED_120MA = const(0x3)
-    LED_140MA = const(0x4)
-    LED_160MA = const(0x5)
-    LED_180MA = const(0x6)
-    LED_200MA = const(0x7)
-
-    # LED duty cycle settings
-    LED_1_40 = const(0x0)
-    LED_1_80 = const(0x1)
-    LED_1_160 = const(0x2)
-    LED_1_320 = const(0x3)
- */
 
 /**
  * @brief Proximity LED current values

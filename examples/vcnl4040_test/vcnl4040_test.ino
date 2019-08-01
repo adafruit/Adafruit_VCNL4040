@@ -71,8 +71,9 @@ void setup() {
 void loop() {
   
   Serial.print("Proximity:"); Serial.println(vcnl4040.getProximity());
-  Serial.print("Ambient light:"); Serial.println(vcnl4040.getAmbientLight());
-  Serial.print("White light:"); Serial.println(vcnl4040.getWhiteLight());
+  Serial.print("Ambient light:"); Serial.println(vcnl4040.getLux());
+  Serial.print("Raw white light:"); Serial.println(vcnl4040.getWhiteLight());
+  Serial.println("");
  
   delay(500);
 }

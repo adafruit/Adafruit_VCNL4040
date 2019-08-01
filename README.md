@@ -1,4 +1,5 @@
-Adafruit_VCNL4040 [![Build Status](https://travis-ci.com/adafruit/Adafruit_VCNL4040.svg?branch=master)](https://travis-ci.com/adafruit/Adafruit_VCNL4040)
+Adafruit_VCNL4040 [![Documentation Status](https://readthedocs.org/projects/adafruit-circuitpython-vcnl4040/badge/?version=latest)](https://circuitpython.readthedocs.io/projects/vcnl4040/en/latest/)
+[![Build Status](https://travis-ci.com/adafruit/Adafruit_VCNL4040.svg?branch=master)](https://travis-ci.com/adafruit/Adafruit_VCNL4040)
 ================
 
 <a href="https://www.adafruit.com/products"><img src="assets/board.jpg?raw=true" width="500px"></a>
