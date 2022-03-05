@@ -383,7 +383,7 @@ void Adafruit_VCNL4040::setAmbientIntegrationTime(
 
   // delay according to the integration time to let the reading at the old IT
   // clear out
-  uint8_t old_it_raw = ambient_int_config.read();
+  //uint8_t old_it_raw = ambient_int_config.read();
   uint16_t old_it_ms = ((8 << ambient_int_config.read()) * 10);
   uint16_t new_it_ms = ((8 << integration_time) * 10);
 
@@ -398,7 +398,7 @@ void Adafruit_VCNL4040::setAmbientIntegrationTime(
 */
 VCNL4040_LEDCurrent Adafruit_VCNL4040::getProximityLEDCurrent(void) {
   Adafruit_BusIO_RegisterBits led_current_config =
-      Adafruit_BusIO_RegisterBits(PS_MS, 2, 8);
+      Adafruit_BusIO_RegisterBits(PS_MS, 3, 8);
   return (VCNL4040_LEDCurrent)led_current_config.read();
 } /**************************************************************************/
 /*!
@@ -410,7 +410,7 @@ VCNL4040_LEDCurrent Adafruit_VCNL4040::getProximityLEDCurrent(void) {
 void Adafruit_VCNL4040::setProximityLEDCurrent(
     VCNL4040_LEDCurrent led_current) {
   Adafruit_BusIO_RegisterBits led_current_config =
-      Adafruit_BusIO_RegisterBits(PS_MS, 2, 8);
+      Adafruit_BusIO_RegisterBits(PS_MS, 3, 8);
   led_current_config.write(led_current);
 }
 
