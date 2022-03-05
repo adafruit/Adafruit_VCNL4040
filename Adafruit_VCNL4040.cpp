@@ -383,7 +383,6 @@ void Adafruit_VCNL4040::setAmbientIntegrationTime(
 
   // delay according to the integration time to let the reading at the old IT
   // clear out
-  //uint8_t old_it_raw = ambient_int_config.read();
   uint16_t old_it_ms = ((8 << ambient_int_config.read()) * 10);
   uint16_t new_it_ms = ((8 << integration_time) * 10);
 
