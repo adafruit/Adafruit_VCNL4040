@@ -114,10 +114,11 @@ typedef enum proximity_type {
  * Values to be matched against the byte returned from `getInterruptStatus`.
  */
 typedef enum interrupt_type {
-  VCNL4040_PROXIMITY_AWAY,
-  VCNL4040_PROXIMITY_CLOSE,
-  VCNL4040_AMBIENT_HIGH = 4,
-  VCNL4040_AMBIENT_LOW,
+  VCNL4040_PROXIMITY_AWAY = 1,
+  VCNL4040_PROXIMITY_CLOSE = 1 << 1,
+  VCNL4040_AMBIENT_HIGH = 1 << 4,
+  VCNL4040_AMBIENT_LOW = 1 << 5,
+  VCNL4040_PROXIMITY_PROTECT_MODE = 1 << 6
 } VCNL4040_InterruptType;
 
 /*!
