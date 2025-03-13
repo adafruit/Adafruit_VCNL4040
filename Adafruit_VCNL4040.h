@@ -102,10 +102,11 @@ typedef enum proximity_integration_time {
  * Allowed values for `enableProximityInterrupts`.
  */
 typedef enum proximity_type {
-  VCNL4040_PROXIMITY_INT_DISABLE,
-  VCNL4040_PROXIMITY_INT_CLOSE,
-  VCNL4040_PROXIMITY_INT_AWAY,
-  VCNL4040_PROXIMITY_INT_CLOSE_AWAY,
+  VCNL4040_PROXIMITY_AWAY = 1,
+  VCNL4040_PROXIMITY_CLOSE = 1 << 1,
+  VCNL4040_AMBIENT_HIGH = 1 << 4,
+  VCNL4040_AMBIENT_LOW = 1 << 5,
+  VCNL4040_PROXIMITY_PROTECT_MODE = 1 << 6
 } VCNL4040_ProximityType;
 
 /**
