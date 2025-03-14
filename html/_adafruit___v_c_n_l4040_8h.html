@@ -207,10 +207,14 @@ Enumerations</h2></td></tr>
  }<tr class="memdesc:a7403dd14f82be09f55fdac6edddebdc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity interrupt types.  <a href="_adafruit___v_c_n_l4040_8h.html#a7403dd14f82be09f55fdac6edddebdc2">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:a7403dd14f82be09f55fdac6edddebdc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc28ec92e4ecc64908ee3d33cb3f8215"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#abc28ec92e4ecc64908ee3d33cb3f8215">interrupt_type</a> { <b>VCNL4040_PROXIMITY_AWAY</b>, 
-<b>VCNL4040_PROXIMITY_CLOSE</b>, 
-<b>VCNL4040_AMBIENT_HIGH</b> = 4, 
-<b>VCNL4040_AMBIENT_LOW</b>
+<tr class="memitem:abc28ec92e4ecc64908ee3d33cb3f8215"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_adafruit___v_c_n_l4040_8h.html#abc28ec92e4ecc64908ee3d33cb3f8215">interrupt_type</a> { <br />
+&#160;&#160;<b>VCNL4040_PROXIMITY_AWAY</b> = 1, 
+<b>VCNL4040_PROXIMITY_CLOSE</b> = 1 &lt;&lt; 1, 
+<b>VCNL4040_AMBIENT_HIGH</b> = 1 &lt;&lt; 4, 
+<b>VCNL4040_AMBIENT_LOW</b> = 1 &lt;&lt; 5, 
+<br />
+&#160;&#160;<b>VCNL4040_PROXIMITY_PROTECT_MODE</b> = 1 &lt;&lt; 6
+<br />
  }<tr class="memdesc:abc28ec92e4ecc64908ee3d33cb3f8215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt types.  <a href="_adafruit___v_c_n_l4040_8h.html#abc28ec92e4ecc64908ee3d33cb3f8215">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:abc28ec92e4ecc64908ee3d33cb3f8215"><td class="memSeparator" colspan="2">&#160;</td></tr>
